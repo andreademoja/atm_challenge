@@ -1,5 +1,5 @@
-require './lib/person'
-require './lib/atm'
+require './lib/person.rb'
+require './lib/atm.rb'
 
 describe Person do
   subject { described_class.new(name: 'Andrea') }
@@ -24,6 +24,10 @@ describe Person do
     before { subject.create_account }
     it 'of Account class' do
       expect(subject.account).to be_an_instance_of Account
+    end
+
+    it 'with himself as an owner' do
+      expect(subject.account.owner).to be subject
     end
   end
 end

@@ -9,13 +9,11 @@ class Person
     @cash = 0
   end
 
-  def create_account()
-    @account = Account.new(owner: name)
+  def create_account
+    @account = Account.new(owner: self)
   end
 
-
   private
-
 
   def set_name(obj)
     obj == nil ?  missing_name : @name = obj
