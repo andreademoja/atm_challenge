@@ -19,11 +19,23 @@ class Atm
       { status: false, message: 'account disabled', date: Date.today}
     else
       perform_transaction(amount, account,)
-      { status: true, message: 'success', date: Date.today, amount: amount }
+      { status: true, message: 'success', date: Date.today, amount: amount, bills: add_bills(amount) }
   end
 end
 
 private
+
+  def add_bills(amount)
+    denominations = [20, 10, 5]
+    bills = []
+    denominations.each do |bill|
+      while amount - bill >= 0
+        amount -= bill
+        bills << bill
+      end
+    end
+    bills
+  end
 
   def account_disabled?(account_status)
      account_status != :active
