@@ -7,7 +7,7 @@ attr_accessor :name, :cash, :account
 
   def initialize(attrs={})
     @name = set_name(attrs[:name])
-    @cash = 0
+    @cash = 100
   end
 
   def create_account
@@ -41,8 +41,8 @@ attr_accessor :name, :cash, :account
  end
 
   def funds_deposit(amount)
-    @account.balance += amount
     @cash -= amount
+    @account.balance += amount
   end
 
   def withdraw_funds(args)
