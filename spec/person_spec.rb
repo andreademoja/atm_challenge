@@ -13,8 +13,8 @@ describe Person do
     expect { described_class.new }.to raise_error 'A person needs a name'
   end
 
-  it 'is expected to have a :cash attribute with value of 0 on initialize' do
-    expect(subject.cash).to eq 0
+  it 'is expected to have a :cash attribute with value of 100 on initialize' do
+    expect(subject.cash).to eq 100
   end
 
   it 'is expected to have a :account attribute' do
