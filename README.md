@@ -1,6 +1,7 @@
 # **ATM CHALLANGE**
 ## *In order to use our Atm machine, we must first enter 'irb' into the Terminal and load the file we need:*
 *irb* 
+
 *2.2.3 :001 > load './lib/atm.rb'*
 
  *=> true*
